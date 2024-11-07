@@ -3,19 +3,22 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 
-
-data class Message(val name : String, val message: String, val foto: String, val fotoPerfil: String)
-val body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas odio augue, sagittis ut fermentum ac, pellentesque vitae erat. Etiam vehicula vehicula congue. Donec quis nulla luctus, consectetur dolor a, efficitur nisl. Pellentesque aliquam rhoncus ultricies. Sed sed felis risus. Vivamus iaculis metus id tincidunt vehicula. Vestibulum congue placerat sapien ac auctor. In commodo finibus purus, eget finibus sapien consectetur nec. Vivamus dictum quis nisl vel blandit. Ut erat risus, ornare eget sodales a, semper quis sem. Donec volutpat tempor libero in luctus. Mauris ac fermentum leo. Nulla quis semper augue. Praesent a viverra risus, et mollis augue. Proin mattis tortor quis enim pretium placerat."
-
-val publicaciones = listOf<Message>(
-    Message("Persona1", body, "img.jpeg", "img.jpeg"),
-    Message("Persona2", body, "img2.jpeg", "img2.jpeg"),
-    Message("Persona3", body, "img3.jpeg", "img3.jpeg"),
-    Message("Persona4", body, "img4.jpeg", "img4.jpeg")
+data class Sugerencia(val name : String, val fotoPerfil: String)
+val Sugerencias = listOf<Sugerencia>(
+    Sugerencia("Persona1","img.jpeg"),
+    Sugerencia("Persona2","img.jpeg"),
+    Sugerencia("Persona3","img.jpeg"),
+    Sugerencia("Persona4","img.jpeg"),
+    Sugerencia("Persona5","img.jpeg"),
 )
 
-val items = listOf(
-    "Home" to Icons.Default.Home,
-    "Search" to Icons.Default.Search,
-    "Settings" to Icons.Default.Settings,
+data class Publicacion(val name : String, val message: String, val foto: String, val fotoPerfil: String)
+val historias = listOf("historia1.jpeg", "historia2.jpeg", "historia3.jpeg", "historia4.jpeg", "historia5.jpeg")
+val descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas odio augue, sagittis ut fermentum ac, pellentesque vitae erat."
+
+val publicaciones = listOf<Publicacion>(
+    Publicacion("Persona1", descripcion, "img.jpeg", "img.jpeg"),
+    Publicacion("Persona2", descripcion, "img2.jpeg", "img2.jpeg"),
+    Publicacion("Persona3", descripcion, "img3.jpeg", "img3.jpeg"),
+    Publicacion("Persona4", descripcion, "img4.jpeg", "img4.jpeg")
 )
