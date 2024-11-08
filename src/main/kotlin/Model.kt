@@ -5,20 +5,19 @@ import androidx.compose.material.icons.filled.Settings
 
 data class Sugerencia(val name : String, val fotoPerfil: String)
 val Sugerencias = listOf<Sugerencia>(
-    Sugerencia("Persona1","img.jpeg"),
-    Sugerencia("Persona2","img.jpeg"),
-    Sugerencia("Persona3","img.jpeg"),
-    Sugerencia("Persona4","img.jpeg"),
-    Sugerencia("Persona5","img.jpeg"),
+    Sugerencia("Persona1","default-profile.jpg"),
+    Sugerencia("Persona2","default-profile.jpg"),
+    Sugerencia("Persona3","default-profile.jpg"),
+    Sugerencia("Persona4","default-profile.jpg"),
+    Sugerencia("Persona5","default-profile.jpg"),
 )
 
-data class Publicacion(val name : String, val message: String, val foto: String, val fotoPerfil: String)
-val historias = listOf("historia1.jpeg", "historia2.jpeg", "historia3.jpeg", "historia4.jpeg", "historia5.jpeg")
-val descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas odio augue, sagittis ut fermentum ac, pellentesque vitae erat."
+data class Publicacion(val autor : String, val descripcion: String, val foto: String, val fotoPerfil: String)
+val historias = listOf("default-profile.jpg", "default-profile.jpg", "default-profile.jpg", "default-profile.jpg", "default-profile.jpg", "default-profile.jpg", "default-profile.jpg", "default-profile.jpg")
+
+const val descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas odio augue, sagittis ut fermentum ac, pellentesque vitae erat."
 
 val publicaciones = listOf<Publicacion>(
-    Publicacion("Persona1", descripcion, "img.jpeg", "img.jpeg"),
-    Publicacion("Persona2", descripcion, "img2.jpeg", "img2.jpeg"),
-    Publicacion("Persona3", descripcion, "img3.jpeg", "img3.jpeg"),
-    Publicacion("Persona4", descripcion, "img4.jpeg", "img4.jpeg")
+    Publicacion("Persona1", descripcion, "default-photo.png", "default-profile.jpg"),
+    Publicacion("Persona2", descripcion, "default-photo.png", "default-profile.jpg"),
 )
