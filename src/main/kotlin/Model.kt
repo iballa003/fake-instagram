@@ -21,3 +21,15 @@ val publicaciones = listOf<Publicacion>(
     Publicacion("Persona1", descripcion, "default-photo.png", "default-profile.jpg"),
     Publicacion("Persona2", descripcion, "default-photo.png", "default-profile.jpg"),
 )
+
+data class Foto(val image: String)
+val Fotos = listOf<Foto>(
+    Foto("default-profile.jpg"),
+    Foto("default-profile.jpg"),
+    Foto("default-profile.jpg"),
+    Foto("default-profile.jpg"),
+    Foto("default-profile.jpg"),
+    Foto("default-profile.jpg"),
+    Foto("default-profile.jpg"),
+    Foto("default-profile.jpg"),
+)

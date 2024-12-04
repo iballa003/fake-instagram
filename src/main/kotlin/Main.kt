@@ -68,6 +68,10 @@ fun App() {
                     )}
                     Text(text = publicacion.autor)
                 }
+                Box(modifier = Modifier.width(300.dp)){
+                    Text(text = publicacion.descripcion)
+                }
+
                 //Text(text = publicacion.descripcion)
 
             }
@@ -75,7 +79,7 @@ fun App() {
         }
             Column {
                 Card(
-                    Modifier.size(width = 240.dp, height = 300.dp).padding(top = 15.dp),
+                    Modifier.size(width = 300.dp, height = 400.dp).padding(top = 15.dp),
                     backgroundColor = Color.DarkGray,
                     contentColor = Color.White,
                     elevation = 10.dp
@@ -97,6 +101,27 @@ fun App() {
                     }
                     }
                 }
+
+                Card(
+                    Modifier.size(width = 300.dp, height = 300.dp).padding(top = 50.dp),
+                    backgroundColor = Color.DarkGray,
+                    contentColor = Color.White,
+                    elevation = 10.dp
+                )
+                {
+                    Column(modifier = Modifier.padding(start = 15.dp), verticalArrangement = Arrangement.spacedBy(15.dp)) {
+                        Text(text = "Fotos", fontSize = TextUnit(value = 18f, type = TextUnitType.Sp), fontWeight = FontWeight.Bold)
+                        Row(horizontalArrangement = Arrangement.Center) {
+                        Fotos.forEach { foto ->
+                                Box(modifier = Modifier.width(60.dp).height(60.dp).padding(10.dp)){
+                                    Image(painter = painterResource(resourcePath = (foto.image)),
+                                        contentDescription = "foto",
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
         }
@@ -107,7 +132,7 @@ fun App() {
 fun main() = application {
     Window(onCloseRequest = ::exitApplication,
         title = "fake instagram",
-        state = rememberWindowState(width = 800.dp, height = 800.dp)
+        state = rememberWindowState(width = 1000.dp, height = 1000.dp)
     ) {
         App()
     }
