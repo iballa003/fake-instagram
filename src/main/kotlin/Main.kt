@@ -49,7 +49,6 @@ fun App() {
             publicaciones.forEach { publicacion ->
                 Card(
                     Modifier.size(width = 240.dp, height = 240.dp).padding(top = 15.dp),
-                    backgroundColor = Color.DarkGray,
                     contentColor = Color.White,
                     elevation = 10.dp
                 )
@@ -111,15 +110,21 @@ fun App() {
                 {
                     Column(modifier = Modifier.padding(start = 15.dp), verticalArrangement = Arrangement.spacedBy(15.dp)) {
                         Text(text = "Fotos", fontSize = TextUnit(value = 18f, type = TextUnitType.Sp), fontWeight = FontWeight.Bold)
+                        Box(modifier = Modifier.width(250.dp)){
                         Row(horizontalArrangement = Arrangement.Center) {
-                        Fotos.forEach { foto ->
-                                Box(modifier = Modifier.width(60.dp).height(60.dp).padding(10.dp)){
-                                    Image(painter = painterResource(resourcePath = (foto.image)),
+
+                        Fotos.forEachIndexed() {index, foto ->
+                            //if (index)
+                                //Box(modifier = Modifier.width(60.dp).height(60.dp).padding(10.dp)){
+                                    Image(
+                                        modifier = Modifier.size(50.dp).padding(5.dp),
+                                        painter = painterResource(resourcePath = (foto.image)
+                                        ),
                                         contentDescription = "foto",
                                     )
-                                }
+                                //}
                             }
-                        }
+                        }}
                     }
                 }
             }
