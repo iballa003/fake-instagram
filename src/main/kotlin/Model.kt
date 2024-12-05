@@ -32,4 +32,5 @@ val Fotos = listOf<Foto>(
     Foto("default-profile.jpg"),
     Foto("default-profile.jpg"),
     Foto("default-profile.jpg"),
+    Foto("default-profile.jpg"),
 )

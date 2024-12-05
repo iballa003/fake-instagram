@@ -12,6 +12,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -23,7 +24,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+import javax.swing.JToolBar.Separator
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun App() {
     Column(modifier = Modifier.padding(start = 15.dp, top = 5.dp, end = 25.dp)) {
@@ -65,13 +68,12 @@ fun App() {
                         modifier = Modifier.clip(
                             CircleShape)
                     )}
-                    Text(text = publicacion.autor)
+                    Text(text = publicacion.autor,modifier = Modifier.padding(start = 5.dp, top = 13.dp))
                 }
                 Box(modifier = Modifier.width(300.dp)){
                     Text(text = publicacion.descripcion)
                 }
 
-                //Text(text = publicacion.descripcion)
 
             }
 
@@ -95,7 +97,7 @@ fun App() {
                                     CircleShape)
                             )
                         }
-                        Text(text = sugerencia.name)
+                        Text(text = sugerencia.name, modifier = Modifier.padding(start = 5.dp, top = 13.dp))
                         }
                     }
                     }
@@ -108,23 +110,20 @@ fun App() {
                     elevation = 10.dp
                 )
                 {
-                    Column(modifier = Modifier.padding(start = 15.dp), verticalArrangement = Arrangement.spacedBy(15.dp)) {
+                    Column(modifier = Modifier.padding(start = 15.dp)) {
                         Text(text = "Fotos", fontSize = TextUnit(value = 18f, type = TextUnitType.Sp), fontWeight = FontWeight.Bold)
-                        Box(modifier = Modifier.width(250.dp)){
-                        Row(horizontalArrangement = Arrangement.Center) {
-
-                        Fotos.forEachIndexed() {index, foto ->
-                            //if (index)
-                                //Box(modifier = Modifier.width(60.dp).height(60.dp).padding(10.dp)){
-                                    Image(
-                                        modifier = Modifier.size(50.dp).padding(5.dp),
-                                        painter = painterResource(resourcePath = (foto.image)
-                                        ),
-                                        contentDescription = "foto",
-                                    )
-                                //}
+                        Box(modifier = Modifier.width(250.dp).height(250.dp)){
+                            FlowRow(horizontalArrangement = Arrangement.spacedBy(space = 10.dp), modifier = Modifier.padding(start = 20.dp, top = 20.dp)){
+                                Fotos.forEachIndexed() {index, foto ->
+                                            Image(
+                                                modifier = Modifier.size(60.dp).padding(top = 10.dp),
+                                                painter = painterResource(resourcePath = (foto.image)
+                                                ),
+                                                contentDescription = "foto",
+                                            )
+                                }
                             }
-                        }}
+                        }
                     }
                 }
             }
